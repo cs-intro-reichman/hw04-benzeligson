@@ -1,3 +1,6 @@
+
+import com.sun.source.tree.IfTree;
+
 public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
@@ -21,6 +24,18 @@ public class KeywordsDetector {
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        for (int i = 0; i < sentences.length; i++) {
+            String sentenceLowerCased = sentences[i];
+            sentenceLowerCased = MyString.lowerCase(sentenceLowerCased);
+            for (int j = 0; j < keywords.length; j++) {
+                String keywordLowerCased = keywords[j];
+                keywordLowerCased = MyString.lowerCase(keywordLowerCased);
+                if (MyString.contains(sentenceLowerCased,keywordLowerCased)){
+                    System.out.println(sentences[i]);
+                    break;
+                }
+            }
+            
+        }
     }
 }
